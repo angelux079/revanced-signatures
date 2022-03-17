@@ -1,0 +1,19 @@
+{
+  "$schema": "https://github.com/VancedReversing/Signatures/blob/main/signatures.schema.json",
+  "signatures": [{
+    "name": "Example",
+    "returns": "V",
+    "accessors": [
+      "PUBLIC",
+      "STATIC"
+    ],
+    "parameters": [
+      "Z",
+      "Ljava/lang/String;"
+    ],
+    "opcodes": [
+      "TODO",
+      "TODO"
+    ]
+  }]
+}
