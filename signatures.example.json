@@ -9,7 +9,7 @@
     ],
     "parameters": [
       "Z",
-      "Ljava/lang/String;"
+      "O"
     ],
     "opcodes": [
       "aaload"

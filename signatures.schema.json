@@ -1,19 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/VancedReversing/Signatures/blob/main/signatures.schema.json",
+  "$id": "https://github.com/ReVancedTeam/revanced-signatures/blob/main/signatures.schema.json",
   "title": "Signatures",
   "description": "An ASM signature list for the Patcher.",
   "type": "object",
   "required": ["signatures"],
   "properties": {
     "signatures": {
-      "description": "A list of signatures.",
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/signature"
-      },
-      "minItems": 1,
-      "uniqueItems": true
+      "$ref": "#/$defs/signatures",
+      "description": "A list of signatures."
     }
   },
   "$defs": {
@@ -29,7 +24,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The name of the method.\nDo not use the actual method name, instead try to guess what the method name originally was."
+          "description": "The name of the method.\nDo not use the actual method name, instead try to guess what the method name originally was.\nIf you are unable to guess a method name, doing something like \"patch-name-1\" is fine too. For example: \"override-codec-1\"\nThis method name will be used to find the corresponding patch."
         },
         "returns": {
           "$ref": "#/$defs/javaType",
@@ -53,13 +48,38 @@
             "$ref": "#/$defs/javaOpcodes"
           },
           "minItems": 1,
-          "description": "The opcode signature of the method, used to find the method by sigscanning."
+          "description": "The opcode signature of the method, used to find the method by signature scanning."
+        },
+        "related-methods": {
+          "$ref": "#/$defs/signatures",
+          "description": "A list of ASM signatures that are in the same class to help the patcher find the method.\nThis is optional, but this may help if a method has very few opcodes."
         }
       }
     },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/signature"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
     "javaType": {
       "type": "string",
-      "pattern": "^\\[{1,2}([VZBCSIJFD]{1}|L[a-zA-Z\/]{1,};)$"
+      "enum": [
+        "V",
+        
+        "Z", "[Z",
+        "B", "[B",
+        "C", "[C",
+        "S", "[S",
+        "I", "[I",
+        "J", "[J",
+        "F", "[F",
+        "D", "[D",
+
+        "O", "[O"
+      ]
     },
     "javaAccessors": {
       "type": "string",

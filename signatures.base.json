@@ -1,1 +1,36 @@
-{}
+{
+  "$schema": "./signatures.schema.json",
+  "signatures": [
+    {
+      "name": "override-codec-1",
+      "returns": "Z",
+      "accessors": ["PUBLIC", "STATIC"],
+      "parameters": ["O", "I"],
+      "opcodes": [
+        "getstatic",
+        "iload_1",
+        "if_icmplt",
+        "iconst_1",
+        "ireturn",
+
+        "iconst_0",
+        "ireturn"
+      ]
+    },
+    {
+      "name": "override-codec-2",
+      "returns": "Z",
+      "accessors": ["PUBLIC", "STATIC"],
+      "parameters": ["I"],
+      "opcodes": [
+        "invokestatic",
+        "astore_1",
+        "aload_1",
+        "ifnonnull",
+        "iconst_0",
+        "istore_2",
+        "goto"
+      ]
+    }
+  ]
+}
