@@ -48,11 +48,7 @@
             "$ref": "#/$defs/javaOpcodes"
           },
           "minItems": 1,
-          "description": "The opcode signature of the method, used to find the method by signature scanning."
-        },
-        "related-methods": {
-          "$ref": "#/$defs/signatures",
-          "description": "A list of ASM signatures that are in the same class to help the patcher find the method.\nThis is optional, but this may help if a method has very few opcodes."
+          "description": "The opcode pattern of the method, used to find the method by signature scanning."
         }
       }
     },
