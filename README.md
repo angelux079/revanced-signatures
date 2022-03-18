@@ -1,2 +1,2 @@
-# Signatures
-Signatures for Patcher.
+# revanced-signatures
+This repository contains signatures for the ReVanced patcher.
