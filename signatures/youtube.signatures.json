@@ -1,5 +1,5 @@
 {
-	"$schema": "./signatures.schema.json",
+	"$schema": "../signatures.schema.json",
 	"signatures": [
 		{
 			"name": "show-video-ads",
@@ -8,15 +8,58 @@
 			"parameters": [],
 			"opcodes": [
 				"invokestatic",
-				"aload0",
+				"aload_0",
 				"getfield",
 				"astore1",
 				"aload1",
 				"ifnull",
-				"aload0",
+				"aload_0",
 				"getfield",
 				"astore1",
 				"aload1"
+			]
+		},
+		{
+			"name": "minimized-playback-manager",
+			"returns": "V",
+			"accessors": ["PUBLIC", "FINAL"],
+			"parameters": ["I", "O", "O"],
+			"opcodes": [
+				"aload_2",
+				"ifnull",
+				"getstatic",
+				"astore_4",
+				"aload_2",
+				"aload_4",
+				"if_acmpne",
+				"iconst_0",
+				"istore_5",
+				"aconst_null",
+				"astore_4",
+				"aload_0",
+				"iconst_0",
+				"putfield"
+			]
+		},
+		{
+			"name": "create-button-patch",
+			"returns": "V",
+			"accessors": ["PUBLIC", "FINAL"],
+			"parameters": ["Z"],
+			"opcodes": [
+				"aload_20",
+				"invokespecial",
+				"iconst_0",
+				"istore_13",
+				"aload_29",
+				"aload_10",
+				"iconst_0",
+				"iconst_0",
+				"aload_6",
+				"invokevirtual",
+				"astore_6",
+				"aload_6",
+				"astore_14"
 			]
 		}
 	]
