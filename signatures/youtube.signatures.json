@@ -1,0 +1,23 @@
+{
+	"$schema": "./signatures.schema.json",
+	"signatures": [
+		{
+			"name": "show-video-ads",
+			"returns": "V",
+			"accessors": ["PUBLIC", "FINAL"],
+			"parameters": [],
+			"opcodes": [
+				"invokestatic",
+				"aload0",
+				"getfield",
+				"astore1",
+				"aload1",
+				"ifnull",
+				"aload0",
+				"getfield",
+				"astore1",
+				"aload1"
+			]
+		}
+	]
+}
